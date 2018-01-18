@@ -13,7 +13,7 @@
 		}
 		a{  
 			color:black; 
-			display:inline-block; /*注意，这里的a元素设为块级元素，其padding才能填满整个空间*/
+			display:block; /*注意，这里的a元素设为块级元素，其padding才能填满整个空间*/
 			padding:10px; 
 			text-decoration:none; 
 		}
@@ -38,7 +38,7 @@
 		nav>ul>li:nth-child(3){
 			position:relative;
 		}
-		nav>ul>li:hover .child{
+		nav>ul>li:hover .child {
            display:block;      /*这里设置为当li上hover时，它的子孙中的.child类显示*/
 		}
 		.child{
