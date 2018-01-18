@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BFC</title>
+	<style>
+		*{
+			box-sizing:content-box; 
+			margin:0;
+			padding:0;  
+		}
+		ul{
+			margin-top:30px; 
+			display:inline-block;
+			list-style:none; 
+			width:60%; 
+		}
+		.picture{
+			display:inline-block;
+			width:30%;
+			margin:10px;
+			text-align:center;
+			border:1px solid;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)   
+		}
+		.picture img{
+          display:inline-block;
+          width: 100%;
+		}
+		.picture p{
+			padding: 1.5em 0;
+		}
+		.layout{
+            
+			margin:30px auto; 
+			text-align:center; 
+		}
+		.layout h1{
+			color:#666; 
+			margin:auto 50px; 
+		}
+		.border{
+			display:inline-block;
+			border: 1px solid rgb(204,204,204);
+            width:64%; 
+		}
+	</style>
+</head>
+<body>
+     
+	<div class="layout">
+		<h1>风景列表</h1>
+		<div class="border"></div>
+		<ul>
+			<li class="picture">
+				
+					<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6">
+					<p>风景如画</p>
+		
+			</li>
+			<li class="picture">
+				
+					<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+					<p>风景如画</p>
+				
+			</li>
+			<li class="picture">
+				
+					<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+					<p>风景如画</p>
+				
+			</li>
+
+					<li class="picture">
+				
+					<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6">
+					<p>风景如画</p>
+		
+			</li>
+			<li class="picture">
+				
+					<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+					<p>风景如画</p>
+				
+			</li>
+			<li class="picture">
+				
+					<img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+					<p>风景如画</p>
+				
+			</li>
+		</ul>
+    </div>
+</body>
+</html>
