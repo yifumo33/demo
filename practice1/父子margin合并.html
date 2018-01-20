@@ -8,13 +8,13 @@
 		  width:200px;
 		  height:200px;
 		  background-color:red;
-		  margin-top:50px;
+		  margin-top:100px;
 		}
 
 		.son{
 		  width:50px;
 		  height:50px;
-		  margin-top:50px;
+		  margin-top:100px;
 		  background-color:blue;
 		 
 		}
@@ -29,18 +29,23 @@
 	</style>
 </head>
 <body>
+	这里出现了margin合并的现象
 	 <div class="father">
+      
       <div class="son">
         
       </div>
     </div>
+       
 
+     设置了border后，合并现象消失  
      <div class="father father1">
       <div class="son">
         
       </div>
     </div>
 
+     设置了padding后，现象消失
      <div class="father father2">
       <div class="son">
         
