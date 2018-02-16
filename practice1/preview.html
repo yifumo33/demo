@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+  .preview{
+  width:300px;
+  height:300px;
+  background:#333333;
+  display:inline-block;
+
+}
+ul,li{
+	 list-style: none;
+}
+  
+  </style>
+</head>
+<body>
+<ul class="ct">
+    <li data-img="https://i.loli.net/2018/02/16/5a86efdfe252a.jpeg" >鼠标放置查看图片1</li>
+    <li data-img="https://i.loli.net/2018/02/16/5a86efdfe20fb.jpeg">鼠标放置查看图片2</li>
+    <li data-img="https://i.loli.net/2018/02/16/5a86efdff1e71.jpeg">鼠标放置查看图片3</li>
+</ul>
+<div class="imgpreview"></div>
+<script>
+ function $(str){
+  return document.querySelector(str)
+}
+
+function $$(str){
+  return document.querySelectorAll(str)
+}
+
+var preview = $('.imgpreview')
+var img = document.createElement('img')
+img.classList.add('preview')
+preview.appendChild(img)
+$('.ct').addEventListener('mouseover',function(e){
+ 
+img.setAttribute('src',e.target.getAttribute("data-img"))
+  
+})
+</script>
+</body>
+</html>
