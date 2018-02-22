@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登陆框3</title>
+	<style>
+		@font-face {
+  font-family: 'iconfont';  /* project id 570893 */
+  src: url('//at.alicdn.com/t/font_570893_li0y4c8rvw50o1or.eot');
+  src: url('//at.alicdn.com/t/font_570893_li0y4c8rvw50o1or.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_570893_li0y4c8rvw50o1or.woff') format('woff'),
+  url('//at.alicdn.com/t/font_570893_li0y4c8rvw50o1or.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_570893_li0y4c8rvw50o1or.svg#iconfont') format('svg');
+}
+
+
+body{
+	width: 100%;
+	height: 100vh;
+	background:  url(./picture1.jpg) center center no-repeat ;
+}
+
+input{
+	outline: none;
+	border:1px;
+}
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+a{
+	text-decoration: none;
+}
+.iconfont{
+	font-family:'iconfont'
+}
+
+header a{
+	position:fixed;
+	right:10px;
+	top:10px;
+	font-size:18px; 
+}
+
+.tag{
+	margin-top: 10px;
+}
+
+.tag a{
+	margin:0px 5px 5px 5px; 
+	font-size:20px;
+	color:#cccccc;  
+}
+
+
+.active {
+	color: black!important;
+	border-bottom:1px solid #000000; 
+}
+
+.model{
+	box-shadow: 0 3px 4px 5px rgba(0,0,0,0.2);
+	position: absolute;
+	top:50%;
+	left:50%;
+	text-align: center;
+	width: 400px;
+	transform: translate(-50%,-50%)rotateY(0deg);
+	background:#ffffff;
+	backface-visibility:hidden; 
+	
+}
+
+.flip-model{
+	display: none;
+}
+
+
+.frame{
+	width:75%;
+	display: inline-block;
+}
+.login-frame,
+.register-frame{
+	border:1px #cccccc solid; 
+	margin:10px 5px;
+}
+.login-frame input,
+.register-frame input{
+	display:inline-block; 
+	line-height: 3;
+	width: 80%;	
+	vertical-align:top; 
+	margin-left:10px;
+}
+.login-frame i,
+.register-frame i{
+	width:10%; 
+	display: inline-block;
+	padding:9px 0px; 
+    font-size:18px; 
+    vertical-align:center;
+}
+.submit{
+	margin:0px 0px 10px 4px; 
+	float:left;
+	padding:5px; 
+	border-radius:5px; 
+	border:1px #cccccc solid; 
+	box-shadow: 2px 2px 3px #cccccc;
+	font-size:16px
+}
+
+.hint{
+	margin-left:6px;
+	color:red;
+	margin-top: 5px;
+	text-align:left; 
+	font-size:8px; 
+}
+
+.close{
+	position: fixed;
+	top:5px;
+	right: 5px;
+}
+
+.flip-model.register .register-model,
+.flip-model.login .login-model{
+	transform: translate(-50%,-50%)rotateY(0deg);
+    transition:all 1s; 
+}
+
+.flip-model.register .login-model,
+.flip-model.login .register-model{
+	transform: translate(-50%,-50%)rotateY(180deg);
+	transition:all 1s; 
+}
+
+	</style>
+</head>
+<body>
+	<header><a href="#" class="iconfont">&#xe606;</a></header>
+
+	<main>
+		<div class="flip-model login">
+			<div class="model login-model">
+				<div class="tag"><a href="#" class="tag1 active" id="login" >登陆</a><a href="#" class="tag2">注册</a></div>
+				<div class="close"><a href="#">X</a></div>
+				<div class="frame">
+					<div class="hint"></div>
+					<form action="/login" class="">
+						<div class="login-frame">
+							<i class="iconfont">&#xe625;</i><input type="text" class="login-username"></div>
+						<div class="login-frame">
+							<i class="iconfont">&#xe64c;</i><input type="password" class="login-password"></div>
+						<input class="submit login-submit" type="submit" value="登陆">
+					</form>
+				</div>
+			</div>
+			<div class="model register-model">
+				<div class="tag"><a href="#" class="tag1">登陆</a><a href="#" class="tag2" id="register">注册</a></div>
+				<div class="close"><a href="#">X</a></div>
+				<div class="frame">
+					<div class="hint"></div>
+					<form action="/login" class="">
+						<div class="register-frame">
+							<i class="iconfont">&#xe625;</i><input type="text" class="register-username"></div>
+						<div class="register-frame">
+							<i class="iconfont">&#xe64c;</i><input type="password" class="register-password1"></div>
+						<div class="register-frame">
+							<i class="iconfont">&#xe64c;</i><input type="password" class="register-password2"></div>
+						<input  class ='submit register-submit'type="submit" value="注册">
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>	
+	<script>
+		function $(str){
+			return document.querySelector(str)
+		  }
+
+		  function $$(str){
+			return document.querySelectorAll(str)
+		  }
+
+     $('.flip-model').addEventListener('click',function(e){
+              if(e.target.classList.contains('tag1')){
+              	$('.flip-model').classList.add('login')
+              	$('.flip-model').classList.remove('register')
+              	$$('.tag1')[0].classList.add('active')
+              	$$('.tag2')[0].classList.remove('active')
+              } if(e.target.classList.contains('tag2')){
+              	$('.flip-model').classList.add('register')
+              	$('.flip-model').classList.remove('login')
+              	$$('.tag2')[1].classList.add('active')
+              	$$('.tag1')[1].classList.remove('active')
+
+              }
+
+     })
+
+     $('.login-model form').addEventListener('submit',function(e){
+     	    e.preventDefault()
+     	    if(/^\w{3,8}$/g.test($('.login-username').value) === false){
+     	    	$('.hint').innerText='用户名只能是3～8个数字字母或下划线'
+     	    	return
+     	    }else if(/^\w{8,16}$/g.test($('.login-password').value) === false){
+     	    	$('.hint').innerText='密码只能是8～16个数字字母或下划线'
+     	    	return
+     	    }
+     	    this.submit()
+     	}
+     )
+
+      $('.register-model form').addEventListener('submit',function(e){
+     	    e.preventDefault()
+     	    if(/^\w{3,8}$/g.test($('.register-username').value) === false){
+     	    	$$('.hint')[1].innerText='用户名只能是3～8个数字字母或下划线'
+     	    	return
+     	    }else if(/^\w{8,16}$/g.test($('.register-password1').value) === false){
+     	    	$$('.hint')[1].innerText='密码只能是8～16个数字字母或下划线'
+     	    	return
+     	    }else if($('.register-password1').value !== $('.register-password2').value){
+     	    	$$('.hint')[1].innerText='请输入相同的密码'
+     	    	return
+     	    }
+     	    this.submit()
+     	}
+     )
+   $('.flip-model').addEventListener('click',function(e){
+   	e.stopPropagation()
+   })
+
+    document.addEventListener('click',function(e){
+    	$('.flip-model').style.display = 'none'
+    })
+   $('.close').addEventListener('click',function(e){
+   	$('.flip-model').style.display = 'none'
+   
+   })
+  
+   $$('.close')[1].addEventListener('click',function(e){
+   	$('.flip-model').style.display = 'none'
+   	
+   })
+
+
+  $('header').addEventListener('click',function(e){
+  	e.stopPropagation()
+  		$('.flip-model').style.display = 'block'
+  })
+
+
+	</script>
+</body>
+</html>
